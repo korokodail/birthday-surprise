@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="image/cake.png" />
+  <link rel="shortcut icon" href="image/cake.png" type="image/png" />a
+  <title>Selamat Hari Jadi 🌸</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #f5faff);
+      color: #333;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .section {
+      display: none;
+      max-width: 600px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
+      padding: 30px 25px;
+      text-align: center;
+      position: relative;
+      animation-fill-mode: forwards;
+    }
+
+    .section>div {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h1 {
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+      color: #ff69b4;
+      text-shadow: 0 0 8px #ff69b4aa;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .section img {
+      margin: 15px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
+    }
+
+    .navBtn {
+      margin: 20px 10px 0;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: #ffaad1;
+      border: none;
+      border-radius: 28px;
+      cursor: pointer;
+      box-shadow: 0 6px 10px rgba(255, 105, 180, 0.3);
+      color: #fff;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      display: inline-block;
+    }
+
+    .navBtn:hover {
+      background: #ff85c3;
+      box-shadow: 0 8px 18px rgba(255, 105, 180, 0.5);
+    }
+
+    #muteBtn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      font-size: 1.7rem;
+      padding: 8px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+
+    #muteBtn:hover {
+      background: #ffe6f3;
+    }
+
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fadeInUp {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: radial-gradient(circle, #ffb6c1, transparent);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: sparkleAnim 3s infinite ease-in-out;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @keyframes sparkleAnim {
+      0% {
+        transform: scale(0.5) translateY(0);
+      }
+
+      50% {
+        transform: scale(1.2) translateY(-20px);
+      }
+
+      100% {
+        transform: scale(0.5) translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Start Section -->
+  <div id="playSection" class="section active">
+    <div>
+      <h1>🎂 Klik untuk Mula 🎂</h1>
+      <button class="navBtn" id="playBtn">💖 Mainkan Muzik & Mula</button>
+    </div>
+  </div>
+
+  <!-- Section 1 -->
+  <div id="section1" class="section">
+    <div>
+      <h1>Selamat Hari Jadi, Awak! 🎉</h1>
+      <img src="image/gif1.gif" width="350" alt="Birthday GIF" />
+      <p>Hari ini hari yang cukup istimewa, sebab hari inilah lahirnya seseorang yang begitu baik hati dan bermakna
+        dalam hidup orang sekeliling dia termasuklah kita.</p>
+      <p>Terima kasih sebab sudi hadir dalam hidup kita. Awak ni jenis orang yang kehadirannya
+        boleh tenangkan suasana, buat kita rasa lebih kuat, dan kadang tu diam awak pun cukup untuk bagi semangat 😊</p>
+      <p>Semoga hari ni awak diraikan dengan penuh kasih dan doa yang baik-baik. Awak layak rasa dihargai, walaupun
+        hanya melalui satu halaman kecil ni yang kita sediakan khas untuk awak 💐</p>
+
+      <button class="navBtn" onclick="goToSection('section2')">➡ Sambung baca 💫</button>
+    </div>
+  </div>
+
+
+
+  <!-- Section 2 -->
+  <div id="section2" class="section">
+    <div>
+      <h1>Terima Kasih, Awak 🌟</h1>
+      <img src="image/gif2.gif" width="350" alt="Thank You GIF" />
+      <p>Kalau nak cakap jujur, kita bersyukur sangat sebab pernah kenal awak. Tak semua orang diberi peluang jumpa
+        seseorang yang ada keikhlasan dalam diri, yang cara cakapnya lembut, dan kehadirannya beri kesan yang
+        menenangkan.</p>
+      <p>Kita belajar banyak daripada awak. Tentang sabar, tentang usaha, dan tentang macam mana nak terus kuat
+        walaupun banyak ujian.</p>
+      <p>Kita doakan supaya apa pun yang awak tengah hadapi, awak sentiasa diberi ketenangan, kekuatan, dan orang yang
+        sentiasa menyokong awak dari jauh dan dekat. Terima kasih sebab jadi diri awak yang sebenar 🌷</p>
+      <button class="navBtn" onclick="goToSection('section1')">⬅ Kembali</button>
+      <button class="navBtn" onclick="goToSection('section3')">➡ Lagiii!</button>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div id="section3" class="section">
+    <div>
+      <h1>Doa untuk Hari Esok Kita 🌈</h1>
+      <img src="image/gif3.gif" width="250" alt="Surprise GIF" /><br>
+      <p>Walaupun ucapan ni kita sampaikan dari skrin jaa, tapi hati kita ikhlas nak doakan yang terbaik untuk hari-hari
+        mendatang awak.</p>
+      <p>Tak kiralah hubungan kita ni kekal sebagai kawan atau mungkin berubah satu hari nanti, kita tetap berharap yang
+        kita dapat terus saling menyokong dalam hidup masing-masing dengan cara yang baik, sihat dan berkat.</p>
+      <p>Sebab kita percaya apa pun yang ditulis oleh Tuhan untuk kita, semuanya ada hikmah dan waktunya sendiri.
+        Kita doakan awak terus maju dan bahagia, dari sekarang sampai masa depan yang awak impikan ✨</p>
+      <button class="navBtn" onclick="goToSection('section2')">⬅ Kembali</button>
+      <button class="navBtn" onclick="goToSection('section4')">🎁 Tengok kejutan!</button>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div id="section4" class="section">
+    <div>
+      <h1>🎁 Satu Kenangan Kecil 🎁</h1>
+      <img src="image/aiskrim.jpg" width="250" alt="Surprise Gift" /><br>
+      <img src="image/gif4.gif" width="180" alt="Surprise GIF" />
+      <p>Mungkin nampak biasa, tapi gambar ni ada cerita yang kita simpan elok dalam hati. Kenangan kecil yang buat
+        kita senyum sendiri bila teringat 😊</p>
+      <p>Kalau ada rezeki, mungkin suatu hari nanti kita boleh ulang balik momen macam ni, bukan sebab aiskrim tu, tapi
+        sebab siapa yang kita luangkan masa tu sama-sama. Bila ada orang yang ikhlas dan jujur, masa jadi lebih berharga
+        🍦</p>
+      <p>Dan akhir sekali... kita nak awak tahu: awak kuat, awak tabah, dan awak ada nilai yang tak semua orang ada.
+        Jangan pernah ragu yang awak disayangi dan dihargai, bukan sebab apa yang awak bagi, tapi sebab siapa awak
+        sebenarnya 🧡</p>
+      <p><strong>Akhir kata, selamat hari lahir Ezzie Ezriani Akma Binti Zahairol 🎈</strong></p>
+      <p>Semoga hari lahir ni bukan sekadar angka bertambah, tapi jadi titik permulaan untuk hidup yang lebih bermakna,
+        lebih tenteram, dan penuh keberkatan. Awak dah lalui banyak benda dalam hidup, dan awak masih mampu senyum,
+        masih mampu jadi penguat untuk orang lain. Itu bukan sesuatu yang biasa <strong>itu kekuatan.</strong></p>
+      <p>Kalau satu hari nanti awak terjumpa balik halaman kecil ni, waktu awak rasa penat atau tercari-cari semangat,
+        ingatlah yang ada satu masa dulu, ada seseorang yang sediakan semua ni hanya untuk buat awak tersenyum, untuk
+        ingatkan awak bahawa awak tak pernah sendirian dalam dunia ni.</p>
+      <p>Dan walaupun kita cuma lalu dalam hidup masing-masing untuk satu fasa tertentu, awak tetap akan jadi seseorang
+        yang kita doakan dengan tulus, walau dari jauh. Awak berharga, awak bernilai, dan kehadiran awak dalam hidup
+        orang lain, termasuk kita adalah satu rahmat yang tak semua orang dapat rasa.</p>
+
+      <button class="navBtn" onclick="goToSection('section5')">🔁 Ulang semula</button>
+    </div>
+  </div>
+
+
+  <!-- Section 5 -->
+  <div id="section5" class="section">
+
+    <h1>Eh... Ulang Balik kerr? 😜</h1>
+    <img src="image/side.jpeg" width="200" alt="Cheeky Monkey" />
+    <p>Aikkk ulang balik ni kenapaa... seronok ehh baca tuu hehehe 😆</p>
+    <p>Takpaaa lah, ulang laa banyak-banyakk pun, kita pun suka bila awak happy 💖</p>
+    <p><strong>Betholl ni nak ulangg?</strong></p>
+    <button class="navBtn" onclick="goToSection('section1')">🔁 Yaa, Ulang Balikk</button>
+
+  </div>
+
+  <canvas id="confettiCanvas" class="confetti"></canvas>
+  <audio id="bgMusic" src="music/Nadhif Basalamah - penjaga hati (Lirik).mp3" loop></audio>
+  <button id="muteBtn">🔊</button>
+
+  <script>
+    const playBtn = document.getElementById('playBtn');
+    const bgMusic = document.getElementById('bgMusic');
+    const muteBtn = document.getElementById('muteBtn');
+    const sections = document.querySelectorAll('.section');
+
+    function showSection(id) {
+      sections.forEach(sec => {
+        sec.classList.remove('fadeInUp', 'active');
+        sec.style.display = 'none';
+      });
+      const section = document.getElementById(id);
+      section.style.display = 'block';
+      section.classList.add('active', 'fadeInUp');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    playBtn.addEventListener('click', () => {
+      bgMusic.play().catch(() => { });
+      showSection('section1');
+      muteBtn.style.display = 'block';
+    });
+
+    muteBtn.addEventListener('click', () => {
+      bgMusic.muted = !bgMusic.muted;
+      muteBtn.innerText = bgMusic.muted ? '🔇' : '🔊';
+    });
+
+    function goToSection(id) {
+      showSection(id);
+    }
+
+    function createSparkles(num) {
+      for (let i = 0; i < num; i++) {
+        let sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+        sparkle.style.top = Math.random() * 100 + 'vh';
+        sparkle.style.left = Math.random() * 100 + 'vw';
+        sparkle.style.animationDelay = (Math.random() * 3) + 's';
+        document.body.appendChild(sparkle);
+      }
+    }
+    createSparkles(50);
+
+    // Confetti logic
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function createParticle() {
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * -20,
+        r: Math.random() * 6 + 4,
+        d: Math.random() * 5 + 1,
+        color: 'hsl(' + (Math.random() * 360) + ', 100%, 70%)',
+      };
+    }
+
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        let p = particles[i];
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        p.y += p.d;
+        if (p.y > canvas.height) particles[i] = createParticle();
+      }
+      requestAnimationFrame(draw);
+    }
+
+    function initConfetti() {
+      particles = Array.from({ length: 20 }, createParticle);
+      resizeCanvas();
+      draw();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('load', initConfetti);
+  </script>
+</body>
+
+</html>
